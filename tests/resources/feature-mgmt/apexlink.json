@@ -1,0 +1,16 @@
+{ "dependencies": [
+{ "name": "AlwaysEnabledFeature", "dependencies": ["Feature"]},
+{ "name": "AlwaysDisabledFeature", "dependencies": ["Feature"]},
+{ "name": "CustomMetadataEnabledFeature", "dependencies": ["Schema.FeatureFlag__mdt", "Feature"]},
+{ "name": "FeatureSetting", "dependencies": ["Feature"]},
+{ "name": "CustomPermissionEnabledFeatureTest", "dependencies": ["CustomPermissionEnabledFeature", "Feature"]},
+{ "name": "FeatureCheckerImplementation", "dependencies": ["FeatureChecker", "FeatureSettingsProvider", "FeatureSetting", "CustomMetadataFeatureSettingsProvider", "Feature"]},
+{ "name": "CustomMetadataFeatureSettingsProvider", "dependencies": ["FeatureSettingsProvider", "FeatureSetting", "Schema.FeatureSetting__mdt"]},
+{ "name": "FeatureSettingTest", "dependencies": ["FeatureSetting", "Feature"]},
+{ "name": "CustMetadataFeatureSettingsProviderTest", "dependencies": ["FeatureSettingsProvider", "FeatureSetting", "CustomMetadataFeatureSettingsProvider"]},
+{ "name": "FeatureSettingsProvider", "dependencies": ["FeatureSetting"]},
+{ "name": "AlwaysEnabledFeatureTest", "dependencies": ["AlwaysEnabledFeature", "Feature"]},
+{ "name": "CustomPermissionEnabledFeature", "dependencies": ["Feature"]},
+{ "name": "AlwaysDisabledFeatureTest", "dependencies": ["AlwaysDisabledFeature", "Feature"]},
+{ "name": "CustomMetadataEnabledFeatureTest", "dependencies": ["CustomMetadataEnabledFeature", "Feature"]},
+{ "name": "FeatureCheckerImplementationTest", "dependencies": ["FeatureChecker", "FeatureSettingsProvider", "FeatureSetting", "FeatureCheckerImplementation", "Feature"]}]}
