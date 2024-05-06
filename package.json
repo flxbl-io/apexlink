@@ -33,10 +33,10 @@
       "directory": "packages/apexlink"
   },
   "publishConfig": {
-      "registry": "https://npm.pkg.github.com"
+      "access": "public"
   },
   "scripts": {
-      "build": "pnpm run clean && pnpm run compile",
+      "build": "npm run clean && npm run compile",
       "clean": "rimraf ./lib && rimraf tsconfig.tsbuildinfo",
       "compile": "tsc -b tsconfig.json",
       "clearCache": "jest --clearCache",
