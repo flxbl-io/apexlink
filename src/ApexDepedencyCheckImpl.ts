@@ -29,7 +29,7 @@ export default class ApexDepedencyCheckImpl {
         let javaHome:string = await this.getJavaHome();
         //Replace Program Files with Progra~1 in Windows
         javaHome = javaHome.replace(/Program Files/, "Progra~1");
-        let command = `${path.join(javaHome, 'bin', 'java')}  -cp  "${jarFile}" -depends  -f json -w ${
+        let command = `${path.join(javaHome, 'bin', 'java')}  -cp  "${jarFile}" "io.github.apexdevtools.apexls.DependencyReport"  -f json -w ${
             this.projectDirectory } > ${this.projectDirectory}/apexlink.json`;
         return command;
     }
