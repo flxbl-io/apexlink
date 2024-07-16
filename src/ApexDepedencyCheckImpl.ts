@@ -6,7 +6,7 @@ import { ConsoleLogger } from '@flxbl-io/sfp-logger';
 import * as fs from 'fs-extra';
 import path from 'path';
 
-const jarFile = path.join(__dirname,  '..', 'jars', 'apexlink-2.3.7.jar');
+const jarFile = path.join(__dirname,  '..', 'jars', '*');
 export default class ApexDepedencyCheckImpl {
     public constructor(private logger: Logger, private projectDirectory: string) {}
 
@@ -23,11 +23,13 @@ export default class ApexDepedencyCheckImpl {
         return result;
     }
 
+
+
     private async getGeneratedCommandWithParams() {
         let javaHome:string = await this.getJavaHome();
         //Replace Program Files with Progra~1 in Windows
         javaHome = javaHome.replace(/Program Files/, "Progra~1");
-        let command = `${path.join(javaHome, 'bin', 'java')}  -jar  ${jarFile} -depends  -json ${
+        let command = `${path.join(javaHome, 'bin', 'java')}  -cp  "${jarFile}" -depends  -f json -w ${
             this.projectDirectory } > ${this.projectDirectory}/apexlink.json`;
         return command;
     }
