@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "@flxbl-io/sfdx-process-wrapper": "^2.1.0",
-    "@flxbl-io/sfp-logger": "^5.0.0",
+    "@flxbl-io/sfp-logger": "5.0.1",
     "find-java-home": "2.0.0",
     "fs-extra": "11.1.1"
   },
